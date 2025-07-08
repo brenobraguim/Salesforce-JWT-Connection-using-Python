@@ -3,22 +3,10 @@
 from create_record import execute_composite
 from mapper import mapper
 from mapping_utils import apply_mapper
+from incoming_json import json_plataforma
 
 # 🎯 JSON recebido
-incoming_json = {
-    "Id": 1,
-    "Observacao": "Teste mapper",
-    "Pessoa": [
-        { "chave": "SegundoNome", "valor": "Silva" },
-        { "chave": "PrimeiroNome", "valor": "João" },
-        { "chave": "Contato", "valor": "bre_ab@hotmail.com" }
-    ],
-    "Empresa": [
-        { "chave": "Nome", "valor": "Empresa do Breno" },
-        { "chave": "Telefone", "valor": "995404125" },
-        { "chave": "Site", "valor": "teste.com" }
-    ]
-}
+incoming_json = json_plataforma
 
 # 🔹 Aplica o mapper
 mapped_data = apply_mapper(incoming_json, mapper)
